@@ -19,9 +19,8 @@ class WeatherSearch:
 
     def _parse_results(self,data):
         timestamp = datetime.strptime(data['time'], "%Y-%m-%d %H:%M")
-        isDay = False if data["is_day"] == 0 else True,
 
-        return {"time": timestamp, "temp_c": data['temp_c'],"is_day": isDay,"wind_kph": data['wind_kph'],"wind_degree": data['wind_degree'],
+        return {"time": timestamp, "temp_c": data['temp_c'],"is_day": data['is_day'],"wind_kph": data['wind_kph'],"wind_degree": data['wind_degree'],
                 "wind_dir": data['wind_dir'],"pressure_mb": data['pressure_mb'],"precip_mm": data['precip_mm'],"humidity": data['humidity'],
                 "feelslike_c": data['feelslike_c'],"windchill_c": data['windchill_c'],"heatindex_c": data['heatindex_c'],
                 "chance_of_rain": data['chance_of_rain'],"vis_km": data['vis_km'],"gust_kph": data['gust_kph'],

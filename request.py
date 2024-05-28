@@ -1,8 +1,10 @@
-import  requests
+import requests
+from auth import api_key
 import json
 
 class Request:
     def __init__(self):
+        self.api_key = api_key
     @staticmethod
     def get_content(url, param):
         response = requests.get(url, params=param)

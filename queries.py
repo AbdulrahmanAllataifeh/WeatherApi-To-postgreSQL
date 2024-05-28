@@ -2,9 +2,9 @@ create_weather_schema = """CREATE SCHEMA IF NOT EXISTS weather_reports;"""
 
 create_weather_table = """
 CREATE TABLE IF NOT EXISTS weather_reports.Dubai_weather_reports (
-	'timestamp' TIMESTAMP  PRIMARY KEY,
+	timestamp TIMESTAMP  PRIMARY KEY,
 	temp_c float,
-	is_day boolean,
+	is_day int,
 	wind_kph float,
 	wind_degree int, 
 	wind_dir varchar,
@@ -19,14 +19,14 @@ CREATE TABLE IF NOT EXISTS weather_reports.Dubai_weather_reports (
 	gust_kph float ,
 	uv float,
 	longitute float,
-	latitude float,
+	latitude float
 );
 """
 
 insert_weather_table = """INSERT INTO weather_reports.Dubai_weather_reports VALUES ('{}', '{}', '{}', '{}','{}', '{}', '{}', '{}','{}', '{}', '{}', '{}','{}', '{}', '{}', '{}','{}', '{}' )
                         ON CONFLICT (timestamp)
                         DO UPDATE SET
-                        'timestamp' = EXCLUDED.timestamp,
+                        timestamp = EXCLUDED.timestamp,
                         temp_c = EXCLUDED.temp_C ,
                         is_day = EXCLUDED.is_day,
                         wind_kph = EXCLUDED.wind_kph,
