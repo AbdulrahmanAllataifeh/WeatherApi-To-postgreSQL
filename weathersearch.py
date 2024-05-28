@@ -23,8 +23,8 @@ class WeatherSearch:
 
         return {"time": timestamp, "temp_c": data['temp_c'],"is_day": isDay,"wind_kph": data['wind_kph'],"wind_degree": data['wind_degree'],
                 "wind_dir": data['wind_dir'],"pressure_mb": data['pressure_mb'],"precip_mm": data['precip_mm'],"humidity": data['humidity'],
-                "cloud": data['cloud'],"feelslike_c": data['feelslike_c'],"windchill_c": data['windchill_c'],"heatindex_c": data['heatindex_c'],
-                "will_it_rain": data['will_it_rain'],"chance_of_rain": data['chance_of_rain'],"vis_km": data['vis_km'],"gust_kph": data['gust_kph'],
+                "feelslike_c": data['feelslike_c'],"windchill_c": data['windchill_c'],"heatindex_c": data['heatindex_c'],
+                "chance_of_rain": data['chance_of_rain'],"vis_km": data['vis_km'],"gust_kph": data['gust_kph'],
                 "uv": data['uv'],"longitute": self._longitute,"latitude": self._latitude}
 
     def get_results(self):
